@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post, Param } from '@nestjs/common';
 
 @Controller('cats')
 export class CatsController {
@@ -15,5 +15,11 @@ export class CatsController {
   @Get('ab*cd')
   findAllAbCd(): string {
     return 'This requestion contains character wildcard';
+  }
+
+  @Get(':id')
+  findOne(@Param() params): string {
+    console.log(params.id);
+    return `This action returns a ${params.id} cat`;
   }
 }
