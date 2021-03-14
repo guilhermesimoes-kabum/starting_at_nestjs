@@ -22,4 +22,9 @@ export class CatsController {
     console.log(params.id);
     return `This action returns a ${params.id} cat`;
   }
+
+  @Get('/byid/:id')
+  findById(@Param('id') id: string): string {
+    return `This action returns a ${id} cat`;
+  }
 }
