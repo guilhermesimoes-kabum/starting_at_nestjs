@@ -1,4 +1,5 @@
 import { Controller, Get, Post, Param } from '@nestjs/common';
+import { Observable, of } from 'rxjs';
 
 @Controller('cats')
 export class CatsController {
